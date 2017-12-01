@@ -1,0 +1,14 @@
+[user]
+  name = Garcia, Garry Keneth
+  email = gkgarcia@netsuite.com
+  signingkey = 7566C35DFCB782707FE03B426B3CCAF946507FF5
+  
+  
+[commit]
+  gpgsign = true
+  
+  
+ [alias]
+  amend = commit -S --amend
+  cm = commit -S -m
+  commit = commit -S

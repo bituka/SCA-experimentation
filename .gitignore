@@ -1,0 +1,28 @@
+##########
+
+# Do not track Node.js module dependencies (auto-downloaded as needed)
+node_modules/
+ns_npm_repository/
+gulp/
+
+# Do not track locally-generated resources, required for deployment, etc
+DeployDistribution/
+LocalDistribution/
+payload.json
+Modules/suitecommerce/
+Modules/third_parties/
+Modules/extensions/
+
+# Do not track credentials for NS deployment (unique to developer)
+.nsdeploy
+
+
+#npm-debug.log
+npm-debug.log*
+templates-manifest*
+distro.json
+default.sublime-project
+gulpfile.js
+package.json
+release.xml
+version.txt
