@@ -14,7 +14,7 @@ define('CaseBucket.Collection'
   )
 {
   'use strict';
-
+  console.log(Model);
   return Backbone.Collection.extend({
     url: Utils.getAbsoluteUrl('services/CaseBucket.Service.ss')
   , model: Model

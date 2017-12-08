@@ -9,11 +9,11 @@
 define('CaseBucket.View'
 ,	[
 	'Backbone'
-	'casebucket.tpl'
+,	'casebucket.tpl'
 	]
 ,	function (
 	Backbone
-	casebucket_tpl
+,	casebucket_tpl
 	)
 {
 	'use strict';

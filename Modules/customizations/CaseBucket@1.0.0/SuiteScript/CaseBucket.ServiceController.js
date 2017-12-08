@@ -2,7 +2,7 @@ define(
 	'CaseBucket.ServiceController'
 ,	[
 		'Application'
-		'ServiceController'
+	,	'ServiceController'
 	,	'CaseBucket.Model'
 	]
 ,	function(
@@ -44,7 +44,7 @@ define(
 				var id = this.request.getParameter('internalid') || this.data.internalid;
 				if(id)
 				{
-					return CaseModel.get(id);
+					return CaseBucketModel.get(id);
 				}
 				else
 				{

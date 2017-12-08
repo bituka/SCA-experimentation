@@ -20,7 +20,6 @@ Modules/extensions/
 #npm-debug.log
 npm-debug.log*
 templates-manifest*
-distro.json
 default.sublime-project
 gulpfile.js
 package.json

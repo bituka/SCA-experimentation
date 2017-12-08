@@ -2,12 +2,14 @@
 //@module CaseBucket
 define('CaseBucket.Router'
 ,	[	'CaseBucket.View'
+	,	'CaseBucket.List.View'
 	,	'Backbone'
 	,	'CaseBucket.Model'
 	,	'CaseBucket.Collection'
 	]
 ,	function (
 		CaseBucketView
+	,	CaseBucketListView
 	,	Backbone
 	,	CaseBucketModel
 	,	CaseBucketCollection
@@ -18,7 +20,7 @@ define('CaseBucket.Router'
 	//@class CaseBucket.Router @extend Backbone.Router
 	return Backbone.Router.extend({
 
-		routes: {
+	routes: {
 			'casebucket': 'caseBucket'
 		,	'casebucketlist': 'caseBucketList'
 		}
@@ -37,13 +39,15 @@ define('CaseBucket.Router'
 
 	, caseBucketList: function ()
 	    {
-	    	debugger;
+
 	      var collection = new CaseBucketCollection()
-	    , view = new CaseBucketView
+
+	    , view = new CaseBucketListView
 	      ({
 	        collection: collection
 	      , application: this.application
 	      });
+
 
 	      collection.fetch().done(function ()
 	      {

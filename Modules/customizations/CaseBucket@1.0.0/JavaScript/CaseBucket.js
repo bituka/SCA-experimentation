@@ -8,7 +8,7 @@
 
 
 
-	goryotripko.dev/c.TSTDRV1073973/sca-dev-kilimanjaro/shopping-local.ssp#/casebucket
+	http://manggoryo.dev/c.TSTDRV1518125/sca-dev-kilimanjaro/shopping-local.ssp#/casebucketlist
 
 
 	add to shooping in distro.json
@@ -50,7 +50,7 @@ define('CaseBucket'
 	//,	mountToApp: function (application)
 		mountToApp: function (application)
 		{
-			return new Router(application);
+			return new Router(application)
 		}
 	};
 });

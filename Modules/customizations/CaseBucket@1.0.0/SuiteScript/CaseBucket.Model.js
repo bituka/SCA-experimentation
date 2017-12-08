@@ -16,11 +16,25 @@ define(
 
 		name: 'CaseBucket'
 
-			// @method get
-		// @param {String} id
-		// @returns {Case.Model.Attributes}
 		, list: function list() {
 
+		//	console.log('SS CaseBucket.Model has been called');
+
+			var suiteletURL = nlapiResolveURL('SUITELET', 1192, 1, true);
+			var headers = new Array();
+			headers['Content-Type'] = 'application/json';
+			headers['User-Agent-x'] = 'SuiteScript-Call';
+
+			var supportReps = nlapiRequestURL(suiteletURL, null, headers, 'GET');
+
+			// nlapiLogExecution('DEBUG', 'reps', JSON.stringify(supportReps));
+
+		//	console.log(JSON.stringify(supportReps));
+
+			return supportReps.getBody();
+
+
+		/* permission error
 	      var searchResults;
 
 	      var searchFilters = [
@@ -29,7 +43,7 @@ define(
 
 	      var searchColumns = [
 	        new nlobjSearchColumn('email')
-	      , new nlobjSearchColumn('name')
+	      , new nlobjSearchColumn('companyname')
 	      ];
 	      var searchResults = Application.getAllSearchResults('customer', searchFilters, searchColumns);
 
@@ -38,15 +52,14 @@ define(
 	      	return _.map(searchResults, function (result) {
 		        return {
 		          email: result.getValue('email')
-		        , name: result.getValue('name')
+		        , name: result.getValue('companyname')
 
 		        }
 	      })
 	      }
 	      return searchResults;
+
+	      */
 	    }
-
-
-
 	});
 });
