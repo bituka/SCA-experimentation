@@ -61,6 +61,65 @@
 			</p>
 		</div>
 	</div>
+
+
+
+<!-- TODO -->
+<div class="creditcard-edit-form">
+	{{#if showTeamSelector}}
+		<div class="creditcard-edit-form-controls-cc-select-container" data-value="creditcard-select-container" data-validation="control-group">
+				<label class="creditcard-edit-form-controls-cc-select-label" for="paymentmethod">
+					{{translate 'Team Name:'}}
+					<span class="creditcard-edit-form-required">*</span>
+				</label>
+				<div data-validation="control">
+					<select class="creditcard-edit-form-controls-cc-select" id="paymentmethod" name="paymentmethod">
+						<option value="0">{{translate 'Please Select Credit Card Type'}}</option>
+						{{#each paymentMethods}}
+							<option value="{{key}}" {{#if selected}} selected {{/if}}>{{name}}</option>
+						{{/each}}
+					</select>
+				</div>
+		</div>
+	{{else}}
+		<input class="creditcard-edit-form-input" type="hidden" id="paymentmethod" name="paymentmethod" value="{{paymentMethodValue}}"/>
+	{{/if}}
+	<div class="creditcard-edit-form-controls-img-container" data-value="creditcard-img-container">
+		{{#each paymentMethods}}
+			<img
+				class="creditcard-edit-form-card-icon {{#if hidden}} hidden {{/if}}"
+				src="{{icon}}"
+				data-value="{{key}}"
+				alt="{{name}}"
+				data-image="creditcard-icon"
+			/>
+		{{/each}}
+	</div>
+</div>
+
+<!-- -->
+
+
+	<div class="login-register-register-form-controls-group" data-validation="control-group">
+		<label class="login-register-register-form-label" for="register-email">
+			{{translate 'Team Name <small class="login-register-register-form-required">*</small>'}}
+		</label>
+		<div class="login-register-register-form-controls" data-validation="control">
+			<input type="teamname" name="teamname" id="register-teamname" class="login-register-register-form-input" placeholder="{{translate 'team name'}}">
+			<p class="login-register-register-form-help-block">
+				<small>
+					{{translate 'Enter your Team name.'}}
+				</small>
+			</p>
+		</div>
+	</div>
+<!-- TODO -->
+
+
+
+
+
+
 	<div class="login-register-register-form-controls-group" data-validation="control-group">
 		<label class="login-register-register-form-label" for="register-password">
 			{{translate 'Password <small class="login-register-register-form-required">*</small>'}}

@@ -361,7 +361,8 @@
                     "GoogleMap",
                     "GoogleMap.Configuration",
                     "StoreLocatorAccessPoints",
-                    "SC.CCT.Html"
+                    "SC.CCT.Html",
+                    "LoginRegister.Register.View.Bucket"
                 ],
                 "amdclean": false,
                 "amdConfig": {
