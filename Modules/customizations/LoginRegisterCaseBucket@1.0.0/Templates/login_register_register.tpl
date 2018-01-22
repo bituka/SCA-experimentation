@@ -65,6 +65,8 @@
 
 
 <!-- TODO -->
+<div data-view="Team.List"></div>
+
 <div class="creditcard-edit-form">
 	{{#if showTeamSelector}}
 		<div class="creditcard-edit-form-controls-cc-select-container" data-value="creditcard-select-container" data-validation="control-group">

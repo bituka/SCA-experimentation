@@ -18,11 +18,11 @@ define('CaseBucket.Details.View'
 
   , getContext: function ()
     {
-      debugger;
+
       return {
         name: this.model.get('name')
       , email: this.model.get('email')
-//      , internalid: this.model.get('internalid')
+      , case_queue_number: this.model.get('case_queue_number')
       }
     }
   })

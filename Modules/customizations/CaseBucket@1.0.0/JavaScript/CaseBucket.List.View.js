@@ -32,6 +32,7 @@ define('CaseBucket.List.View'
       'CaseBucket.Collection': function ()
       {
         return new CollectionView({
+
           'childView': DetailsView,
           'collection': this.collection,
           'viewsPerRow': 1
@@ -46,8 +47,8 @@ define('CaseBucket.List.View'
   , getBreadcrumbPages: function ()
     {
       return [{
-        text: _('Example SuiteScript').translate()
-      , href: '/casebucket'
+        text: _('Bucket Manager').translate()
+      , href: '/casebucketlist'
       }]
     }
 
@@ -57,9 +58,11 @@ define('CaseBucket.List.View'
       this.application = options.application;
 
       var self = this;
+      
       this.collection.on('reset sync add remove change destroy', function() {
         self.render();
       });
+ 
     }
 
   , removeModel: function (options)

@@ -20,9 +20,10 @@ define('LoginRegister.Register.View.Bucket', [
     // _.extend(LoginRegisterRouter.prototype.events, {
     //     'click .item-details-rating-header-rating': 'onClickRating'
     // });
-    _.extend(LoginRegisterRegisterViewBucket.prototype.routes, {
+    _.extend(LoginRegisterRouter.prototype.routes, {
         'caseBucketTeamList': 'caseBucketTeamList'
     });
+
 
     _.extend(LoginRegisterRouter.prototype, {
         // methods for all instances

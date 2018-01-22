@@ -16,6 +16,7 @@ define(
 ,	function (
 		Backbone
 	,	_
+	,	Utils
 	)
 {
 	'use strict';
@@ -65,7 +66,7 @@ define(
     return Backbone.Model.extend(
     {
 
-        urlRoot: _.getAbsoluteUrl('services/CaseBucket.Service.ss')
+        urlRoot: Utils.getAbsoluteUrl('services/CaseBucket.Service.ss')
 /*
     ,    validation:
         {

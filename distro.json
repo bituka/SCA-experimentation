@@ -582,7 +582,9 @@
                 "SC.BaseComponent",
                 "Cart.Component",
                 "CaseBucket.Model",
-                "CaseBucket.ServiceController"
+                "CaseBucket.ServiceController",
+                "LoginRegisterCaseBucket.ServiceController"
+
             ],
             "exportFile": "ssp_libraries.js",
             "amdConfig": {

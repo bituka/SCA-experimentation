@@ -21,8 +21,30 @@ define('LoginRegister.Register.View.Bucket', [
         'click .item-details-rating-header-rating': 'onClickRating'
     });
     */
+    //TODO
+    _.extend(LoginRegisterRegisterView.prototype.initialize, {
 
+    });
+
+    //TODO
     _.extend(LoginRegisterRegisterView.prototype, {
+
+        childViews:
+            {
+                'Team.List': function ()
+                {
+                    console.log('Team.List Child View');
+
+                    /*
+                    return new BackboneCollectionView({
+                        'childView': DetailsView,
+                        'collection': this.collection,
+                        'viewsPerRow': 1
+                    });
+                    */
+                }
+            }
+
         // methods for all instances
         /*
         onClickRating: function clickItemDetailsRatingHeader(e) {
@@ -45,8 +67,11 @@ define('LoginRegister.Register.View.Bucket', [
         })
         */
 
-        //TODO
-        bindings: _.extend(LoginRegisterRegisterView.prototype.bindings,{
+
+
+
+    //TODO
+     ,   bindings: _.extend(LoginRegisterRegisterView.prototype.bindings,{
             '[name="teamname"]': 'teamname'
         })
 

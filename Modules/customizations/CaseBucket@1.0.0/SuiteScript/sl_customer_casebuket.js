@@ -69,11 +69,12 @@ function getCustomer(request, response)
     var searchColumns = new Array();
     searchColumns[0] = new nlobjSearchColumn('email');
     searchColumns[1] = new nlobjSearchColumn('companyname');
+    searchColumns[2] = new nlobjSearchColumn('custentity_case_queue_number');
 
     var searchResults = nlapiSearchRecord('customer', null, searchFilters, searchColumns);
 
     var supportReps = [];
-
+    
     for (var i=0; i < searchResults.length; i++)
     {
 
@@ -81,16 +82,17 @@ function getCustomer(request, response)
 
         var email = searchResult.getValue('email');
         var name = searchResult.getValue('companyname');
+        var case_queue_number = searchResult.getValue('custentity_case_queue_number');
 
         supportReps.push({
             email: email,
-            name: name
+            name: name,
+            case_queue_number: case_queue_number
         });
-
+    }
     response.setContentType('JSON');
     nlapiLogExecution('DEBUG', 'reps from SL', JSON.stringify(supportReps));
     response.write(JSON.stringify(supportReps));
 
-    }
 
 }

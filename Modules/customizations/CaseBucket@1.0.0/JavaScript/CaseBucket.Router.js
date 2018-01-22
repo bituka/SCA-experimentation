@@ -28,6 +28,7 @@ define('CaseBucket.Router'
 	,	initialize: function (application)
 		{
 			this.application = application;
+    //        this.options = options;
 		}
 
 	,	caseBucket: function ()
@@ -51,7 +52,9 @@ define('CaseBucket.Router'
 
 	      collection.fetch().done(function ()
 	      {
-	        view.showContent();
+		
+					view.showContent();
+					
 	      });
 	    }
 
