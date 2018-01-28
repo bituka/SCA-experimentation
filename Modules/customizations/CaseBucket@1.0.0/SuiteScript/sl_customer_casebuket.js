@@ -83,11 +83,13 @@ function getCustomer(request, response)
         var email = searchResult.getValue('email');
         var name = searchResult.getValue('companyname');
         var case_queue_number = searchResult.getValue('custentity_case_queue_number');
+        var last_grabbed_case = searchResult.getValue('custentity_cust_last_grabbed_case');
 
         supportReps.push({
             email: email,
             name: name,
-            case_queue_number: case_queue_number
+            case_queue_number: case_queue_number,
+            last_grabbed_case: last_grabbed_case
         });
     }
     response.setContentType('JSON');
