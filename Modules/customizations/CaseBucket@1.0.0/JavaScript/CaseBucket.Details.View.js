@@ -23,6 +23,7 @@ define('CaseBucket.Details.View'
         name: this.model.get('name')
       , email: this.model.get('email')
       , case_queue_number: this.model.get('case_queue_number')
+      , last_grabbed_case: this.model.get('last_grabbed_case')
       }
     }
   })

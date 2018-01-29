@@ -70,7 +70,8 @@ function getCustomer(request, response)
     searchColumns[0] = new nlobjSearchColumn('email');
     searchColumns[1] = new nlobjSearchColumn('companyname');
     searchColumns[2] = new nlobjSearchColumn('custentity_case_queue_number');
-
+	  searchColumns[3] = new nlobjSearchColumn('custentity_cust_last_grabbed_case');	
+  
     var searchResults = nlapiSearchRecord('customer', null, searchFilters, searchColumns);
 
     var supportReps = [];
@@ -98,3 +99,4 @@ function getCustomer(request, response)
 
 
 }
+
