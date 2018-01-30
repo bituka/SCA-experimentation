@@ -17,6 +17,7 @@
             </div>
         </fieldset>
         <button type="submit">{{#if isNew}}{{translate 'Add'}}{{else}}{{translate 'Update'}}{{/if}}</button>
-        
+        -->
+        <button type="submit" data-action="updateGrabbedCase">{{translate 'Enter Case Grabbed'}}</button>
     </form>
 </div>

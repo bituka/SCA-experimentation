@@ -41,7 +41,7 @@ define('CaseBucket.List.View'
     }
 
   , events: {
-      'click button[data-action="remove"]': 'removeRecord'
+      'click button[data-action="updateGrabbedCase"]': 'updateGrabbedCase'
     }
 
   , getBreadcrumbPages: function ()
@@ -87,6 +87,13 @@ define('CaseBucket.List.View'
       });
       this.application.getLayout().showInModal(view);
     }
+  
+  , updateGrabbedCase: function (e)
+    {
+      e.preventDefault();
+
+      console.log('hello');
+    }  
 
   , template: Template
 
