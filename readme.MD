@@ -22,7 +22,7 @@ http://manggoryo.dev/c.TSTDRV1518125/sca-dev-kilimanjaro/shopping-local.ssp#/cas
 
 name: sl_customer_casebuket
 id: customscript_sl_customer_casebuket
-script: sl_customer_casebuket.jss
+script: sl_customer_casebuket.js
 
 name: suiteletTeam
 deployment: customdeploy_suiteletteam_deploy

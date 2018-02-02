@@ -7,6 +7,7 @@ define('CaseBucket.List.View'
 
   , 'CaseBucket.Details.View'
   , 'casebucket_list.tpl'
+  , 'Backbone.FormView'
   ]
 , function
   (
@@ -17,6 +18,7 @@ define('CaseBucket.List.View'
 
   , DetailsView
   , Template
+  , BackboneFormView
   )
 {
   'use strict'
@@ -41,7 +43,7 @@ define('CaseBucket.List.View'
     }
 
   , events: {
-      'click button[data-action="updateGrabbedCase"]': 'updateGrabbedCase'
+      'click button[data-action="updateGrabbedCase"]': 'saveForm'
     }
 
   , getBreadcrumbPages: function ()
@@ -62,41 +64,23 @@ define('CaseBucket.List.View'
       this.collection.on('reset sync add remove change destroy', function() {
         self.render();
       });
+
+      BackboneFormView.add(this);
  
     }
 
-  , removeModel: function (options)
-    {
-      var model = options.context.collection.get(options.id);
-      model.destroy();
-    }
-
-  , removeRecord: function (e)
-    {
-      e.preventDefault();
-      var view = new ConfirmationView
-      ({
-        title: _.translate('Remove Favorite Thing')
-      , body: _.translate('Are you sure you want to remove this favorite thing?')
-      , callBack: this.removeModel
-      , callBackParameters: {
-          context: this
-        , id: jQuery(e.target).data('id')
-        }
-      , autohide: true
-      });
-      this.application.getLayout().showInModal(view);
-    }
-  
+  //TO DELETE
   , updateGrabbedCase: function (e)
     {
       e.preventDefault();
+
+
 
       console.log('hello');
     }  
 
   , template: Template
 
-  , title: _('Example SuiteScript Page').translate()
+  , title: _('Bucket Manager').translate()
   });
 });
