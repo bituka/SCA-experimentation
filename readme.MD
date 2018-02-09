@@ -27,3 +27,8 @@ script: sl_customer_casebuket.js
 name: suiteletTeam
 deployment: customdeploy_suiteletteam_deploy
 script: Team Suitelet
+
+
+
+//TOFIX
+fix blank page just added backboneview form and some others in CaseBucket.List.View

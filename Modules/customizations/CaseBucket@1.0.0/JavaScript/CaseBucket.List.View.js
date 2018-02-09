@@ -7,7 +7,7 @@ define('CaseBucket.List.View'
 
   , 'CaseBucket.Details.View'
   , 'casebucket_list.tpl'
-//  , 'Backbone.FormView'
+  , 'Backbone.FormView'
   , 'underscore'
   ]
 , function
@@ -19,7 +19,7 @@ define('CaseBucket.List.View'
 
   , DetailsView
   , Template
-//  , BackboneFormView
+  , BackboneFormView
   , _
   )
 {
@@ -45,7 +45,9 @@ define('CaseBucket.List.View'
     }
 
   , events: {
-      'click button[data-action="updateGrabbedCase"]': 'updateGrabbedCase'
+    //  'click button[data-action="updateGrabbedCase"]': 'updateGrabbedCase'
+      'submit form': 'saveForm'
+
     }
 
   , getBreadcrumbPages: function ()
@@ -60,6 +62,7 @@ define('CaseBucket.List.View'
     {
       this.options = options;
       this.application = options.application;
+      this.model = options.model;
 
       var self = this;
       
@@ -67,7 +70,7 @@ define('CaseBucket.List.View'
         self.render();
       });
 
- //     BackboneFormView.add(this);
+      BackboneFormView.add(this);
  
     }
 
