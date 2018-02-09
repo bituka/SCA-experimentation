@@ -24,7 +24,6 @@ define('CaseBucket.Details.View'
       , email: this.model.get('email')
       , case_queue_number: this.model.get('case_queue_number')
       , last_grabbed_case: this.model.get('last_grabbed_case')
-      , isNew: this.model.isNew()
       }
     }
   })
