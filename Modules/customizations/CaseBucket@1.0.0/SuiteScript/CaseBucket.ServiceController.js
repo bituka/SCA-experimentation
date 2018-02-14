@@ -40,7 +40,6 @@ define(
 		,	get: function()
 			{
 
-				//TODELETE or refactor???
 				var id = this.request.getParameter('internalid') || this.data.internalid;
 				if(id)
 				{

@@ -1,8 +1,7 @@
 
 <div class="home">
     <h2>Bucket Manager</h2>
-    <form>
-        <fieldset>
+
         <div data-view="CaseBucket.Collection"></div>
         <!--
         <fieldset>
@@ -21,7 +20,6 @@
         -->
         
 
-        <button type="submit" data-action="updateGrabbedCase">{{translate 'Enter Case Grabbed'}}</button>
-        </fieldset>
-    </form>
+        <!-- <button type="submit" data-action="updateGrabbedCase">{{translate 'Enter Case Grabbed'}}</button>-->
+
 </div>

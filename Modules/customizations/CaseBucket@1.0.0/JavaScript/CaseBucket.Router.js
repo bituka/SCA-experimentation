@@ -3,6 +3,7 @@
 define('CaseBucket.Router'
 ,	[	'CaseBucket.View'
 	,	'CaseBucket.List.View'
+	,	'CaseBucket.Edit.View'
 	,	'Backbone'
 	,	'CaseBucket.Model'
 	,	'CaseBucket.Collection'
@@ -10,6 +11,7 @@ define('CaseBucket.Router'
 ,	function (
 		CaseBucketView
 	,	CaseBucketListView
+	,	CaseBucketEditView
 	,	Backbone
 	,	CaseBucketModel
 	,	CaseBucketCollection
@@ -21,8 +23,10 @@ define('CaseBucket.Router'
 	return Backbone.Router.extend({
 
 	routes: {
-			'casebucket': 'caseBucket'
+			'/':'caseBucketList'
+		,	'casebucket': 'caseBucket'
 		,	'casebucketlist': 'caseBucketList'
+		, 'casebucket/:id': 'caseBucketDetails'
 		}
 
 	,	initialize: function (application)
@@ -39,9 +43,9 @@ define('CaseBucket.Router'
 		}
 
 	, caseBucketList: function ()
-	    {
+		{
 
-	      var collection = new CaseBucketCollection()
+			var collection = new CaseBucketCollection()
 
 	    , view = new CaseBucketListView
 	      ({
@@ -56,7 +60,28 @@ define('CaseBucket.Router'
 					view.showContent();
 					
 	      });
-	    }
+		}
+
+		, caseBucketDetails: function (id)
+    {
+      var model = new CaseBucketModel()
+    , self = this;
+
+      model.fetch({data: {internalid: id}}).done(function ()
+      {
+        var view = new CaseBucketEditView
+        ({
+          application: self.application
+        , model: model
+        });
+
+        view.showContent();
+        view.model.on('sync change destroy reset add', function (model)
+        {
+          Backbone.history.navigate('casebucket', {trigger: true});
+        });
+      });
+    }
 
 	});
 });

@@ -7,7 +7,6 @@ define('CaseBucket.List.View'
 
   , 'CaseBucket.Details.View'
   , 'casebucket_list.tpl'
-  , 'Backbone.FormView'
   , 'underscore'
   ]
 , function
@@ -19,7 +18,6 @@ define('CaseBucket.List.View'
 
   , DetailsView
   , Template
-  , BackboneFormView
   , _
   )
 {
@@ -44,12 +42,6 @@ define('CaseBucket.List.View'
       }
     }
 
-  , events: {
-    //  'click button[data-action="updateGrabbedCase"]': 'updateGrabbedCase'
-      'submit form': 'saveForm'
-
-    }
-
   , getBreadcrumbPages: function ()
     {
       return [{
@@ -69,23 +61,13 @@ define('CaseBucket.List.View'
       this.collection.on('reset sync add remove change destroy', function() {
         self.render();
       });
-
-      BackboneFormView.add(this);
  
     }
-
-  //TO DELETE
-  , updateGrabbedCase: function (e)
-    {
-      e.preventDefault();
-      
-      
-
-      console.log('hello');
-    }  
 
   , template: Template
 
   , title: _('Bucket Manager').translate()
   });
 });
+
+

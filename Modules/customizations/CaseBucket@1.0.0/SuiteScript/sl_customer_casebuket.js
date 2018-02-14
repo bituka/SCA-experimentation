@@ -10,7 +10,8 @@ function getCustomer(request, response)
     searchColumns[0] = new nlobjSearchColumn('email');
     searchColumns[1] = new nlobjSearchColumn('companyname');
     searchColumns[2] = new nlobjSearchColumn('custentity_case_queue_number');
-	  searchColumns[3] = new nlobjSearchColumn('custentity_cust_last_grabbed_case');	
+    searchColumns[3] = new nlobjSearchColumn('custentity_cust_last_grabbed_case');
+    searchColumns[4] = new  nlobjSearchColumn('internalid');	
   
     var searchResults = nlapiSearchRecord('customer', null, searchFilters, searchColumns);
 
@@ -25,12 +26,14 @@ function getCustomer(request, response)
         var name = searchResult.getValue('companyname');
         var case_queue_number = searchResult.getValue('custentity_case_queue_number');
         var last_grabbed_case = searchResult.getValue('custentity_cust_last_grabbed_case');
+        var internalid = searchResult.getValue('internalid');
 
         supportReps.push({
             email: email,
             name: name,
             case_queue_number: case_queue_number,
-            last_grabbed_case: last_grabbed_case
+            last_grabbed_case: last_grabbed_case,
+            internalid: internalid
         });
     }
     response.setContentType('JSON');
