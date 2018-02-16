@@ -67,19 +67,20 @@ define(
 
 			// @method post The call to Case.Service.ss with http method 'post' is managed by this function
 			// @return {Case.Model.Attributes}
-		,	post: function()
+		/*
+			,	post: function()
 			{
 				var new_case_id = CaseModel.create(nlapiGetUser() + '', this.data);
 				return CaseModel.get(new_case_id);
 			}
-
+		*/
 			// @method put The call to Case.Service.ss with http method 'put' is managed by this function
 			// @return {Case.Model.Attributes}
 		,	put: function()
 			{
 				var id = this.request.getParameter('internalid') || this.data.internalid;
-				CaseModel.update(id, this.data);
-				return CaseModel.get(id);
+				CaseBucketModel.update(id, this.data);
+				return CaseBucketModel.get(id);
 			}
 		});
 	}

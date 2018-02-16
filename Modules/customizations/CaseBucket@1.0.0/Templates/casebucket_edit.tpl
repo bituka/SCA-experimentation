@@ -3,10 +3,9 @@
         <h2>Bucket Manager</h2>
 <form>
     <fieldset>
-        ID: {{id}}
-        <div data-input="favething" data-validation="control-group">
-            <label for="favething">{{translate 'Favorite Thing'}}</label>
-            <span data-validation="control"><input type="text" name="favething" id="favething" value="{{favething}}"></span>
+        <div data-input="grabbedcase" data-validation="control-group">
+            <label for="grabbedcase">{{translate 'Enter Case Grabbed'}}</label>
+            <span data-validation="control"><input type="text" name="grabbedcase" id="grabbedcase" value=""></span>
         </div>
         <!--
         <div data-input="favething" data-validation="control-group">
@@ -19,6 +18,6 @@
         </div>
         -->
     </fieldset>
-    <button type="submit">{{translate 'Submit Case Grabbed'}}</button>
+    <button type="submit">{{translate 'Squirt it!!!'}}</button>
 </form>
 </div>

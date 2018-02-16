@@ -16,11 +16,12 @@ define(
 
 		name: 'CaseBucket'
 
+		
 		//Learned from  Working with Commerce Data: Elevated Permissions, Searches, SuiteScript 2.0 and Bootstrapping
 		// https://developers.suitecommerce.com/working-with-commerce-data-elevated-permissions-searches-suitescript-20-and-bootstrapping
 		
 		, get: function (id)
-    {
+    	{
 				var filters = [	
 					new nlobjSearchFilter('internalid', null, 'is', id)
 				]
@@ -44,12 +45,13 @@ define(
 
 					else
 					{
-						throw notFoundError
+						throw notFoundError;
 					}
-    }
+			}
 
 		// This is in SUITELET
-		, list: function list() {
+		, list: function list() 
+			{
 		
 		//	console.log('SS CaseBucket.Model has been called');
 
@@ -67,7 +69,7 @@ define(
 			return supportReps.getBody();
 
 
-		/* permission error
+		/* permission error but now fixed *******
 	      var searchResults;
 
 	      var searchFilters = [
@@ -93,6 +95,16 @@ define(
 	      return searchResults;
 
 	      */
-	    }
+			}
+			
+			, update: function (id, data)
+				{
+				//	this.validate(data);
+
+					var record = nlapiLoadRecord('customer', id);
+					record.setFieldValue('custentity_cust_last_grabbed_case', data.grabbedcase);
+					
+					return nlapiSubmitRecord(record)
+				}
 	});
 });

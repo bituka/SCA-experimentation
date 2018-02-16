@@ -25,7 +25,7 @@ define('CaseBucket.Edit.View'
     {
         return [
           {text: _('Bucket Manager').translate(), href: '/casebucketlist'}
-        , {text: 'Enter Grabbed Case' + this.model.get('name'), href: '/casebucket/' + this.model.get('internalid')}
+        , {text: 'Enter Grabbed Case - ' + this.model.get('name'), href: '/casebucket/' + this.model.get('internalid')}
         ]
     }
 
