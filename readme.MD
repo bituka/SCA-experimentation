@@ -1,3 +1,6 @@
+# Case Bucket Manager SCA App
+A fun project for SCA 
+
 1. npm install kilimanjaro
 
 2. Download code from the repo below and dev environment 
